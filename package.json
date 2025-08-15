@@ -1,0 +1,40 @@
+{
+  "name": "wind-turbine-management-backend",
+  "version": "1.0.0",
+  "description": "Mock backend service for wind turbine management system",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/scripts/start.js",
+    "start:backend-only": "node src/scripts/start.js --backend-only",
+    "start:no-seed": "node src/scripts/start.js --skip-seed",
+    "start:no-simulator": "node src/scripts/start.js --no-simulator",
+    "dev": "node --watch src/app.js",
+    "backend": "node src/app.js",
+    "simulator": "node streaming-service/simulator.js",
+    "seed": "node src/services/seedRunner.js",
+    "seed:reset": "node src/services/seedRunner.js --reset",
+    "seed:clear": "node src/services/seedRunner.js --clear",
+    "seed:check": "node src/scripts/check-seed-data.js"
+  },
+  "keywords": [
+    "wind-turbine",
+    "mock-backend",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "ws": "^8.18.3"
+  }
+}
