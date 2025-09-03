@@ -59,6 +59,7 @@ app.get('/api/1', (req, res) => {
     endpoints: {
       health: '/health',
       docs: '/docs',
+      docsJson: '/docs.json',
       windTurbines: '/api/1/windturbines',
       workOrders: '/api/1/workorders',
       summary: '/api/1/summary',
@@ -72,6 +73,12 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(specs, {
   customCss: '.swagger-ui .topbar { display: none }',
   customSiteTitle: 'Wind Turbine Management API Documentation'
 }));
+
+// OpenAPI Spec endpoints
+
+app.get('/docs.json', (req, res) => {
+  res.json(specs);
+});
 
 // API Routes - Power output routes must come before general turbine routes
 app.use('/api/1/windturbines/:id/power-output', powerOutputRouter);
